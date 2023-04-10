@@ -13,5 +13,6 @@ class MovieForm(FlaskForm):
         Length(min=10, max=500, message='Description must be between 10 and 500 characters.')
     ])
     poster = FileField('Movie Poster', validators=[
-        FileAllowed(['jpg', 'jpeg', 'png'], message='Only JPEG, JPG, and PNG images are allowed.')
+        FileAllowed(['jpg', 'jpeg', 'png'], message='Only JPEG, JPG, and PNG images are allowed.'), 
+        DataRequired(message='Please provide a file')
     ])
